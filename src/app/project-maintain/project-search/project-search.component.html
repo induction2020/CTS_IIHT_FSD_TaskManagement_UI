@@ -1,0 +1,35 @@
+
+
+
+<div style="margin-left: 200px; margin-top: 20px; margin-bottom: 20px;">
+  <hr style="border-top: dotted 1.5px;" />
+<form [formGroup]="projectSearchForm" (ngSubmit)="onSubmit()">
+  <table >
+    <tr>
+      <td style="width: 220px;">
+        <input type="text" formControlName="project" placeholder="Search.." name="project" class="form-control"
+          id="project" style="width: 200px">
+      </td>
+      <td >
+         <button class="btn btn-info" (click)="searchByKey">Search</button> &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="margin-top: 20px;">
+          
+       </td>
+    </tr>
+    </table>
+   </form>
+   
+   <div style="margin-top: 20px;">
+    <label>Sort By: </label>&nbsp;
+    <button class="btn btn-info"  (click)="sortProjectsBy('startDate')">Start Date</button>&nbsp;
+    <button class="btn btn-info" (click)="sortProjectsBy('endDate')">End Date</button>&nbsp;
+    <button class="btn btn-info" (click)="sortProjectsBy('priority')">Priority</button>&nbsp;
+   <button class="btn btn-info" (click)="sortProjectsBy('completed')">Completed</button>&nbsp;
+</div>
+
+   <hr style="border-top: dotted 2.5px;" />
+
+</div>

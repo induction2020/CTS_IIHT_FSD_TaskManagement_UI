@@ -1,0 +1,44 @@
+
+<div class="task-container">
+    <br>
+    <div  *ngFor="let user of users" >
+      <div style="text-align: center">
+        <table style="width: 50%; margin-left: 200px; margin-right: 100px;">
+          <tr>
+              <td style="width: 200px">
+                  <p style="border-style: ridge;background-color:rgb(65, 236, 241);width: 180px;height: 30px;">
+                       {{user.firstName}}
+                  </p>
+                </td>
+                <td  style="width: 100px"><button class="btn btn-warning" (click)="editUser(user)"> Edit</button></td>
+          </tr>
+
+          <tr>
+              <td style="width: 200px">
+                  <p style="border-style: ridge;background-color:rgb(65, 236, 241);width: 180px;height: 30px;">
+                       {{user.lastName}}
+                  </p>
+                </td>
+                <td  style="width: 100px"><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button></td>
+          </tr>
+          <tr>
+              <td style="width: 200px">
+                  <p style="border-style: ridge;background-color:rgb(65, 236, 241);width: 180px;height: 30px;">
+                       {{user.employeeId}}
+                  </p>
+                </td>
+          </tr>
+          
+           <tr>
+              <td colspan="10">
+                      <hr style="border-top: dotted 1.5px;" />
+              </td>
+           </tr>
+        </table> 
+        </div> 
+        
+    </div> 
+    
+  </div>
+  
+  

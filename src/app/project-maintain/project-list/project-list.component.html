@@ -1,0 +1,62 @@
+
+<div class="task-container">
+  <br>
+  <div  *ngFor="let project of projects" >
+    <div style="text-align: center">
+      
+
+      <table style="width: 50%; margin-left: 200px; margin-right: 100px;">
+        <tr>
+            <td style="width: 420px; ">
+                
+                <table style="text-align: left; border-style: solid;background-color:rgb(121, 238, 238);width: 400px;height: 120px;">
+                  <tr>
+                    <td colspan="2">
+                        <b>Project:</b> &nbsp; {{project.project}}
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <b>No of Tasks:</b> {{project.numbOfTasks}} &nbsp;
+                      </td>
+                      <td>
+                          <b>Completed:</b> {{project.completed}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <b>Start Date:</b> {{project.startDate}} &nbsp;
+                      </td>
+                      <td>
+                          <b>End Date:</b> {{project.endDate}}
+                      </td>
+                  </tr>
+                </table>
+              
+              </td>
+              <td style="width: 200px;">
+                  <p style="text-align: left;  margin-left: 20px; border-style: ridge;background-color:rgb(121, 238, 238);width: 180px;height: 120px;">
+                      <br><br>
+                      <b>Priority:</b> {{project.priority}} 
+                   </p>
+              </td>
+              <td  style="width: 100px;">
+                <button class="btn btn-warning" style=" margin-left: 20px;" (click)="editProject(project)"> Edit</button> 
+                <br>
+                <br>
+                <button class="btn btn-danger" style=" margin-left: 20px;" (click)="deleteProject(project)"> Delete</button>
+              </td>
+        </tr>
+        <tr>
+            <td colspan="10">
+                    <hr style="border-top: dotted 1.5px;" />
+            </td>
+         </tr>
+        </table>
+
+      </div> 
+      
+  </div> 
+  
+</div>
+

@@ -1,0 +1,31 @@
+<div style="margin-left: 200px; margin-top: 20px; margin-bottom: 20px;">
+    <hr style="border-top: dotted 1.5px;" />
+  <form [formGroup]="userSearchForm" (ngSubmit)="onSubmit()">
+    <table >
+      <tr>
+        <td style="width: 220px;">
+          <input type="text" formControlName="firstName" placeholder="Search.." name="firstName" class="form-control"
+            id="firstName" style="width: 200px">
+        </td>
+        <td >
+           <button class="btn btn-info" (click)="searchByKey">Search</button> &nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="margin-top: 20px;">
+            
+         </td>
+      </tr>
+      </table>
+     </form>
+     
+     <div style="margin-top: 20px;">
+      <label>Sort By: </label>&nbsp;
+      <button class="btn btn-info"  (click)="sortUsersBy('firstName')">First Name</button>&nbsp;
+      <button class="btn btn-info" (click)="sortUsersBy('lastName')">Last Name</button>&nbsp;
+      <button class="btn btn-info" (click)="sortUsersBy('employeeId')">Employee Id</button>&nbsp;
+  </div>
+
+     <hr style="border-top: dotted 2.5px;" />
+
+</div>

@@ -1,0 +1,26 @@
+<html>
+<div class="col-md-6 user-container" style="margin-left: 300px">
+
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()" validate>
+  
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" formControlName="lastName" placeholder="Last Name" name="lastName" class="form-control" id="lastName" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="employeeId">Employee Id:</label>
+        <input type="text" formControlName="employeeId" placeholder="Employee Id" name="employeeId" class="form-control" id="employeeId" required />
+      </div>
+  
+      <button type="submit" class="btn btn-success">{{ add_label_btn }}</button> &nbsp;&nbsp;  
+      <button class="btn btn-warning">Reset</button>
+  
+    </form>
+  </div> 
+  </html>
