@@ -1,41 +1,194 @@
-<!DOCTYPE html>
-<html>
-<body>
-  
   <div class="col-md-6 user-container" style="margin-left: 250px">
 
-    <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addTaskForm" (ngSubmit)="onSubmit()" ngNativeValidate >
   
+      <div class="col-md-6">
+          <input type="text" formControlName="project" disabled placeholder="project" name="project" class="form-control"
+            id="project" required />
+        </div>
+        <div class="col-md-6">
+          <input type="button" style="height: 35px; width: 80px;" class="btn btn-info" data-toggle="modal"
+            data-target="#projectModal" value="Search" />
+        </div>
+        <br><br><br>
+
       <div class="form-group">
         <label for="Task">Task:</label>
         <input type="text" formControlName="task" placeholder="task" name="task" class="form-control" id="task">
       </div>
   
       <div class="form-group">
-        <label for="priority">Priority:</label>
-        <input type="text" formControlName="priority" placeholder="priority" name="priority" class="form-control" id="priority">
+          <input type="checkbox" id="parentTaskId" name="parentTaskId" (click)="enableParentTask()" [checked]="parentTaskId" />
+          <label for="startDate">Parent Task</label>
       </div>
-  
+
       <div class="form-group">
-        <label for="parentName">Parent Task:</label>
-        <input type="text" formControlName="parentName" placeholder="parentName" name="parentName" class="form-control" id="parentName">
+        <label for="priority">Priority:</label> 
+        <input type="range"  formControlName="priority"   name="priority"  placeholder="priority" 
+        min="1" max="10" step="1" name="priority" class="form-control" id="priority">
       </div>
+
+      <div class="col-md-6">
+          <input type="text" formControlName="parentName" disabled placeholder="parentName" name="parentName" class="form-control"
+            id="parentName" required />
+        </div>
+        <div class="col-md-6">
+          <input type="button" style="height: 35px; width: 80px;" class="btn btn-info" data-toggle="modal"
+            data-target="#parentTaskModal" value="Search" />
+        </div>
+  
+        <br><br><br>
   
       <div class="form-group">
         <label for="startDate">Start Date:</label>
-        <input type="text" formControlName="startDate" placeholder="startDate" name="startDate" class="form-control" id="startDate">
+        <input type="date" formControlName="startDate" placeholder="startDate" name="startDate" class="form-control" id="startDate">
       </div>
   
       <div class="form-group">
         <label for="endDate">End Date:</label>
-        <input type="text" formControlName="endDate" placeholder="endDate" name="endDate" class="form-control" id="endDate">
+        <input type="date" formControlName="endDate" placeholder="endDate" name="endDate" class="form-control" id="endDate">
       </div>
 
-      <button class="btn btn-success">Add Task</button>
-  
+      <div class="col-md-6">
+          <input type="text" formControlName="user" disabled placeholder="user" name="user" class="form-control"
+            id="user" required />
+        </div>
+        <div class="col-md-6">
+          <input type="button" style="height: 35px; width: 80px;" class="btn btn-info" data-toggle="modal"
+            data-target="#userModal" value="Search" />
+        </div>
+
+        <br><br><br>
+
+      <button type="submit" class="btn btn-success">Add Task</button>
+      <br><br><br>
     </form>
   </div>
   
 
-</body>
-</html>
+
+  
+<!-- Modal -->
+<div class="modal fade" id="projectModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Project</h4>
+        </div>
+  
+        <div *ngFor="let project of projects">
+          <div style="text-align: center">
+            <table>
+              <tr>
+                <td style="width: 100px">
+                    <input type="radio" name="projectSel" [value]="project" [(ngModel)]="projectSel">
+                </td>
+                <td style="width: 400px">
+                  {{project.project}}
+                </td>
+                
+              </tr> 
+              <tr>
+                <td colspan="10"> 
+                  <hr style="border-top: dotted 1px;" />
+                </td>
+              </tr>
+            </table>
+          </div>
+  
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" 
+          data-dismiss="modal" (click)="selectProject()" >Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+<!-- Modal -->
+<div class="modal fade" id="userModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search User</h4>
+        </div>
+  
+        <div *ngFor="let user of users">
+          <div style="text-align: center">
+            <table>
+              <tr>
+                <td style="width: 100px">
+                    <input type="radio" name="userSel" [value]="user" [(ngModel)]="userSel">
+                </td>
+                <td style="width: 400px">
+                  {{user.firstName}} &nbsp; {{user.lastName}}
+                </td>
+                
+              </tr> 
+              <tr>
+                <td colspan="10">
+                  <hr style="border-top: dotted 1px;" />
+                </td>
+              </tr>
+            </table>
+          </div>
+  
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  
+          data-dismiss="modal" (click)="selectUser()" >Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+
+
+  
+<!-- Modal -->
+<div class="modal fade" id="parentTaskModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search Parent Task</h4>
+        </div>
+  
+        <div *ngFor="let task of tasks">
+          <div style="text-align: center">
+            <table>
+              <tr>
+                <td style="width: 100px">
+                    <input type="radio" name="taskSel" [value]="task" [(ngModel)]="taskSel">
+                </td>
+                <td style="width: 400px">
+                  {{task.task}} 
+                </td>
+                
+              </tr> 
+              <tr>
+                <td colspan="10">
+                  <hr style="border-top: dotted 1px;" />
+                </td>
+              </tr>
+            </table>
+          </div>
+  
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" 
+          data-dismiss="modal" (click)="selectParentTask()" >Select</button>
+        </div>
+      </div>
+    </div>
+  </div>

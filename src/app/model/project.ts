@@ -6,4 +6,5 @@ export class Project{
     priority : string;
     numbOfTasks : number;
     completed: string;
+    managerId: string;
 }

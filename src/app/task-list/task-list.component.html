@@ -1,41 +1,41 @@
 
 <div class="task-container">
-  <br>
+ 
   <div  *ngFor="let task of tasks" >
     <div style="text-align: center">
-      <table style="width: 80%; margin-left: 200px; margin-right: 100px;">
+      <table style="width: 90%; margin-left: 100px; margin-right: 50px;">
         <tr>
-          <td style="width: 200px">
-            <p style="border-style: solid;background-color:rgb(241, 201, 19);width: 180px;height: 100px;">
+          <td style="width: 150px">
+            <p style="border-style: groove;background-color:rgb(34, 226, 240);width: 140px;height: 80px;">
                 <b>Task</b>
                 <br>
                 <br>
                  {{task.task}}
             </p>
           </td>   
-          <td style="width: 200px">
-            <p style="border-style: solid;background-color: rgb(34, 226, 240) ;width: 180px;height: 100px;align-content: center">
+          <td style="width: 150px">
+            <p style="border-style: groove;background-color: rgb(34, 226, 240) ;width: 140px; height: 80px;align-content: center">
                 <b>Parent Task</b>
                 <br>
                 <br>{{task.parentName}}
            </p>
           </td>
-          <td style="width: 120px">
-            <p style="border-style: none;color: rgb(213, 18, 231);width: 100px;height: 100px;align-content: center">
+          <td style="width: 150px">
+            <p style="border-style: groove;background-color: rgb(34, 226, 240) ;width: 140px;height: 80px;align-content: center">
                 <b>Priority</b> 
                 <br>
                 <br> {{task.priority}}
            </p>
           </td>
-          <td style="width: 120px">
-            <p style="border-style: none;color: red;width: 100px;height: 100px;align-content: center">
+          <td style="width: 150px">
+            <p style="border-style: groove;background-color: rgb(34, 226, 240) ;width: 140px;height: 80px;align-content: center">
                 <b>Start Date</b>
                 <br>
-                <br>{{task.startDate}}
+                <br>{{task.startDate}} 
            </p>
           </td>
-          <td style="width: 120px">
-            <p style="border-style: none;color: red;width: 100px;height: 100px;align-content: center">
+          <td style="width: 150px">
+            <p style="border-style: groove;background-color: rgb(34, 226, 240) ;width: 140px;height: 80px;align-content: center">
                 <b>End Date</b>
                 <br>
                 <br>{{task.endDate}}

@@ -3,5 +3,6 @@ export class User{
     lastName: string;
     employeeId: string;
     userId: number;
-    
+    projectId: number;
+    taskId : number;
 }

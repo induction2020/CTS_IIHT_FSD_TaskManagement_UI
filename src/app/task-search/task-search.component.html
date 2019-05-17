@@ -1,57 +1,19 @@
 <form [formGroup]="searckTaskForm" (ngSubmit)="onSubmit()">
-    <table style="margin-left: 200px">
+    <table style="margin-left: 100px">
     <tr>
-      <td>
-        <label for="task">Task:</label>
+      <td style="width: 100px" >
+        <label for="task">Project:</label>
       </td>
-      <td colspan="3">
-          <input type="text" formControlName="task" placeholder="task" name="task" class="form-control" id="task">
-      </td>
-      <td style="width: 120px; padding-left: 20px;">
-          <label for="parentName">Parent Task:</label>
-      </td>
-      <td colspan="3">
-          <input type="text" formControlName="parentName" placeholder="parentName" name="parentName" class="form-control" id="parentName">
-      </td>
-    </tr> 
-    <tr><td style="height: 15px"></td></tr>
-    <tr>
-        <td style="width: 100px">
-            <label for="priorityFrom">Priority From:</label>
-        </td>
-        <td>
-            <input type="text" formControlName="priorityFrom" placeholder="priorityFrom" name="priorityFrom" class="form-control" id="priorityFrom">
-        </td>
-        <td style="width: 120px; padding-left: 20px">
-            <label for="priorityTo">Priority To:</label>
-        </td>
-        <td>
-            <input type="text" formControlName="priorityTo" placeholder="priorityTo" name="priorityTo" class="form-control" id="priorityTo">
-        </td>
-        <td style="width: 120px; padding-left: 20px">
-            <label for="startDate">Start Date:</label>
-        </td>
-        <td>
-            <input type="text" formControlName="startDate" placeholder="startDate" name="startDate" class="form-control" id="startDate">
-        </td>
-        <td style="width: 120px; padding-left: 20px">
-            <label for="endDate">End Date:</label>
-        </td>
-        <td>
-            <input type="text" formControlName="endDate" placeholder="endDate" name="endDate" class="form-control" id="endDate">
-        </td>
-      </tr>
-      <tr><td style="height: 15px"></td></tr>
-      <tr>
-      <td colspan="3"></td>
-      <td  style="width: 100px"><button class="btn btn-success" (click)="searchTask(taskSerch)">Search</button></td>
-      <td  style="width: 100px"><button class="btn btn-danger" (click)="deleteTask(taskSerch)">Reset</button></td>
-      <td colspan="2"></td>
-      </tr>
-      <tr>
-            <td colspan="10">
-                  <hr style="border-top: dotted 2px;" />
-            </td>
-        </tr>
+      <td colspan="3" style="width: 420px">
+          <input type="text" style="width:400px" formControlName="task"
+                    placeholder="Project Name" name="task" class="form-control" id="task">
+       </td>
+    <td style="width: 200px">
+      <button class="btn btn-success" (click)="searchTask(taskSerch)">Search</button>
+     </td>
+    </tr>
     </table>
+    <br>
+    <br>
+    <br>
     </form>

@@ -18,6 +18,7 @@ import { ProjectMaintainComponent } from './project-maintain/project-maintain.co
 import { ProjectAddComponent } from './project-maintain/project-add/project-add.component';
 import { ProjectListComponent } from './project-maintain/project-list/project-list.component';
 import { ProjectSearchComponent } from './project-maintain/project-search/project-search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProjectSearchComponent } from './project-maintain/project-search/projec
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     CustomOrderByPipePipe

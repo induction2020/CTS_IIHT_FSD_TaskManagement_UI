@@ -41,6 +41,7 @@ export class ProjectListComponent implements OnInit {
 
 
   editProject(project : Project) : void {
+    project.managerId = "";
     this.projectDataService.editProjectDetails(project);
   }
 }

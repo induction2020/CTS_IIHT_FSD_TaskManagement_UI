@@ -39,6 +39,9 @@ export class UserListComponent implements OnInit {
 
 
   editUser(user : User) : void {
+    user.projectId =0;
+    user.taskId =0;
+    
     this.userDataService.editUserDetails(user);
   }
 }

@@ -15,6 +15,7 @@ export class ProjectAddComponent implements OnInit {
   addProjectForm : FormGroup;
   isChecked: any;
   users: any;
+  managerSel : string ='';
 
   constructor(private formBuilder: FormBuilder,
     private projectService : ProjectService,
@@ -51,6 +52,8 @@ export class ProjectAddComponent implements OnInit {
   }
 
   onSubmit(){
+
+    
 
     if( this.add_label_btn == "Update Project"){
       //Update Project
@@ -94,6 +97,10 @@ enableDate(){
     endDate.enable;
   }
 
+}
+
+selectManager(){ 
+    this.addProjectForm.controls['managerId'].setValue(this.managerSel);
 }
 
 }

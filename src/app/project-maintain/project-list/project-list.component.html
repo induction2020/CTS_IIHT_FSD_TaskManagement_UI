@@ -8,8 +8,10 @@
       <table style="width: 50%; margin-left: 200px; margin-right: 100px;">
         <tr>
             <td style="width: 420px; ">
-                
-                <table style="text-align: left; border-style: solid;background-color:rgb(121, 238, 238);width: 400px;height: 120px;">
+                <div style="text-align: left;  margin-left: 20px; border-style: groove;
+                background-color:rgb(121, 238, 238);width: 330px;height: 120px;">
+
+                <table style="width: 330px;height: 120px;"> 
                   <tr>
                     <td colspan="2">
                         <b>Project:</b> &nbsp; {{project.project}}
@@ -32,19 +34,21 @@
                       </td>
                   </tr>
                 </table>
+              </div>
               
               </td>
-              <td style="width: 200px;">
-                  <p style="text-align: left;  margin-left: 20px; border-style: ridge;background-color:rgb(121, 238, 238);width: 180px;height: 120px;">
+              <td style="width: 200px;"> 
+                  <p style="text-align: left;  margin-left: 20px; border-style: groove;
+                              background-color:rgb(121, 238, 238);width: 180px;height: 120px;">
                       <br><br>
                       <b>Priority:</b> {{project.priority}} 
                    </p>
               </td>
               <td  style="width: 100px;">
-                <button class="btn btn-warning" style=" margin-left: 20px;" (click)="editProject(project)"> Edit</button> 
+                <button class="btn btn-warning" style=" margin-left: 20px;" (click)="editProject(project)"> Update</button> 
                 <br>
                 <br>
-                <button class="btn btn-danger" style=" margin-left: 20px;" (click)="deleteProject(project)"> Delete</button>
+                <button class="btn btn-danger" style=" margin-left: 20px;" (click)="deleteProject(project)"> Supend</button>
               </td>
         </tr>
         <tr>
